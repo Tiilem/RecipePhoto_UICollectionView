@@ -7,7 +7,7 @@
 //
 
 #import "RecipeCollectionViewController.h"
-
+#import "RecipeCollectionHeaderView.h"
 @interface RecipeCollectionViewController () {
     NSArray *recipeImages;
 }
@@ -41,7 +41,8 @@
 
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
     
-    
+    self.collectionView.contentInset = UIEdgeInsetsMake(20,0,0,0);//以免遮住ststus bar
+    self.collectionView.backgroundColor = [UIColor brownColor];
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(50,0,0,0);
 }
 
@@ -59,7 +60,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
     
-    UITableViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
     
     recipeImageView.image = [UIImage imageNamed:[recipeImages[indexPath.section] objectAtIndex:indexPath.row]];
@@ -69,6 +70,43 @@
     return cell;}
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return [recipeImages count];
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+
+{
+    
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader){
+        
+        RecipeCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        NSString *title = [[NSString alloc] initWithFormat:@"Recipe Group #%li",indexPath.section+1];
+        
+        headerView.title.text = title;
+        
+        UIImage *headerImage = [UIImage imageNamed:@"header_banner.png"] ;
+        
+        headerView.backgroundImage.image = headerImage;
+        
+        
+        reusableview = headerView;
+        
+    }
+    
+    if (kind == UICollectionElementKindSectionFooter){
+        
+//        UICollectionReusableView *footerview = [collectionView dequeueResuableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+        
+        UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+        reusableview = footerview;
+        
+    }
+    
+    return reusableview;
+    
+    
+    
 }
 
 @end

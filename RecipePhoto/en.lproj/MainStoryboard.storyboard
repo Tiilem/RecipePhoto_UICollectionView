@@ -8,19 +8,19 @@
         <!--Recipe Collection View Controller-->
         <scene sceneID="2VD-LN-jaq">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="fRE-Zu-kz0" customClass="RecipeCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="qz2-8m-61Y">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="fRE-Zu-kz0" customClass="RecipeCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="qz2-8m-61Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yxe-kT-7bn">
                             <size key="itemSize" width="100" height="100"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9AK-Ef-bEQ">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -36,13 +36,55 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.98829669126824826" green="0.99546446224940133" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98829669129999997" green="0.99546446219999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2qL-Hb-mxC" secondAttribute="bottom" constant="20" id="9DN-8q-afy"/>
                                     <constraint firstItem="2qL-Hb-mxC" firstAttribute="centerX" secondItem="9AK-Ef-bEQ" secondAttribute="centerX" id="K50-fY-Ulj"/>
                                 </constraints>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="4MC-au-4Oz" customClass="RecipeCollectionHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="HeaderView" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-gL-aFL">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-TI-iqA">
+                                    <rect key="frame" x="139" y="14" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="0.053481560679999998" blue="0.19882257719999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="c8I-gL-aFL" firstAttribute="top" secondItem="4MC-au-4Oz" secondAttribute="top" id="32v-BS-wV2"/>
+                                <constraint firstItem="ttX-TI-iqA" firstAttribute="centerX" secondItem="c8I-gL-aFL" secondAttribute="centerX" id="Ccu-kb-c9p"/>
+                                <constraint firstItem="c8I-gL-aFL" firstAttribute="leading" secondItem="4MC-au-4Oz" secondAttribute="leading" id="MHx-ex-YcR"/>
+                                <constraint firstAttribute="trailing" secondItem="c8I-gL-aFL" secondAttribute="trailing" id="Vnl-p4-Ixw"/>
+                                <constraint firstItem="ttX-TI-iqA" firstAttribute="centerY" secondItem="c8I-gL-aFL" secondAttribute="centerY" id="dvO-TP-4cQ"/>
+                                <constraint firstAttribute="bottom" secondItem="c8I-gL-aFL" secondAttribute="bottom" id="lW0-r2-1oO"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="backgroundImage" destination="c8I-gL-aFL" id="ngP-WO-ZAR"/>
+                                <outlet property="title" destination="ttX-TI-iqA" id="7ig-Zb-IAG"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="HYM-yg-X4B">
+                            <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="081-KX-e9D">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="081-KX-e9D" firstAttribute="top" secondItem="HYM-yg-X4B" secondAttribute="top" id="I7d-DK-mmp"/>
+                                <constraint firstAttribute="bottom" secondItem="081-KX-e9D" secondAttribute="bottom" id="X6b-vG-GOj"/>
+                                <constraint firstItem="081-KX-e9D" firstAttribute="leading" secondItem="HYM-yg-X4B" secondAttribute="leading" id="gZs-Lu-Ier"/>
+                                <constraint firstAttribute="trailing" secondItem="081-KX-e9D" secondAttribute="trailing" id="qgd-wx-IuI"/>
+                            </constraints>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="fRE-Zu-kz0" id="ztb-36-aeC"/>
                             <outlet property="delegate" destination="fRE-Zu-kz0" id="VV6-IY-j44"/>
@@ -54,4 +96,7 @@
             <point key="canvasLocation" x="143" y="35"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="footer_banner.png" width="640" height="100"/>
+    </resources>
 </document>

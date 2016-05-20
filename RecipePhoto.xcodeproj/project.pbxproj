@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CF928081CEF02020010F950 /* footer_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF928061CEF02020010F950 /* footer_banner.png */; };
+		7CF928091CEF02020010F950 /* header_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF928071CEF02020010F950 /* header_banner.png */; };
+		7CF9280C1CEF02AB0010F950 /* RecipeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9280B1CEF02AB0010F950 /* RecipeCollectionHeaderView.m */; };
 		F44B278316A29C7200746E64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B278216A29C7200746E64 /* UIKit.framework */; };
 		F44B278516A29C7200746E64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B278416A29C7200746E64 /* Foundation.framework */; };
 		F44B278716A29C7200746E64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44B278616A29C7200746E64 /* CoreGraphics.framework */; };
@@ -38,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CF928061CEF02020010F950 /* footer_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_banner.png; sourceTree = "<group>"; };
+		7CF928071CEF02020010F950 /* header_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_banner.png; sourceTree = "<group>"; };
+		7CF9280A1CEF02AB0010F950 /* RecipeCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionHeaderView.h; sourceTree = "<group>"; };
+		7CF9280B1CEF02AB0010F950 /* RecipeCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionHeaderView.m; sourceTree = "<group>"; };
 		F44B277E16A29C7200746E64 /* RecipePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44B278216A29C7200746E64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F44B278416A29C7200746E64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,10 +141,14 @@
 				F44B27BA16A2C0BB00746E64 /* green_tea.jpg */,
 				F44B27BB16A2C0BB00746E64 /* instant_noodle_with_egg.jpg */,
 				F44B27BC16A2C0BB00746E64 /* noodle_with_bbq_pork.jpg */,
+				7CF928061CEF02020010F950 /* footer_banner.png */,
+				7CF928071CEF02020010F950 /* header_banner.png */,
 				F44B279116A29C7200746E64 /* AppDelegate.h */,
 				F44B279216A29C7200746E64 /* AppDelegate.m */,
 				F44B27A516A2AD6500746E64 /* RecipeCollectionViewController.h */,
 				F44B27A616A2AD6500746E64 /* RecipeCollectionViewController.m */,
+				7CF9280A1CEF02AB0010F950 /* RecipeCollectionHeaderView.h */,
+				7CF9280B1CEF02AB0010F950 /* RecipeCollectionHeaderView.m */,
 				F44B279A16A29C7300746E64 /* MainStoryboard.storyboard */,
 				F44B278916A29C7200746E64 /* Supporting Files */,
 			);
@@ -210,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44B278D16A29C7200746E64 /* InfoPlist.strings in Resources */,
+				7CF928081CEF02020010F950 /* footer_banner.png in Resources */,
 				F44B279516A29C7200746E64 /* Default.png in Resources */,
 				F44B279716A29C7200746E64 /* Default@2x.png in Resources */,
 				F44B279916A29C7200746E64 /* Default-568h@2x.png in Resources */,
@@ -226,6 +238,7 @@
 				F44B27C716A2C0BB00746E64 /* vegetable_curry.jpg in Resources */,
 				F44B27C816A2C0BB00746E64 /* japanese_noodle_with_pork.jpg in Resources */,
 				F44B27C916A2C0BB00746E64 /* thai_shrimp_cake.jpg in Resources */,
+				7CF928091CEF02020010F950 /* header_banner.png in Resources */,
 				F44B27CA16A2C0BB00746E64 /* angry_birds_cake.jpg in Resources */,
 				F44B27CB16A2C0BB00746E64 /* green_tea.jpg in Resources */,
 				F44B27CC16A2C0BB00746E64 /* instant_noodle_with_egg.jpg in Resources */,
@@ -244,6 +257,7 @@
 				F44B278F16A29C7200746E64 /* main.m in Sources */,
 				F44B279316A29C7200746E64 /* AppDelegate.m in Sources */,
 				F44B27A716A2AD6500746E64 /* RecipeCollectionViewController.m in Sources */,
+				7CF9280C1CEF02AB0010F950 /* RecipeCollectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
